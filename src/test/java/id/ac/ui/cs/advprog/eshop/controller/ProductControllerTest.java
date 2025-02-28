@@ -69,7 +69,7 @@ public class ProductControllerTest {
     @Test
     void testProductUpdateGet_Success() throws Exception {
         Product p = new Product();
-        p.setProductId("1");
+        p.setId("1");
         p.setProductName("Dummy Product");
         p.setProductQuantity(100);
 
@@ -83,7 +83,7 @@ public class ProductControllerTest {
     @Test
     void testProductUpdatePost() throws Exception {
         Product p = new Product();
-        p.setProductId("1");
+        p.setId("1");
         p.setProductName("Dummy Product");
         p.setProductQuantity(100);
 

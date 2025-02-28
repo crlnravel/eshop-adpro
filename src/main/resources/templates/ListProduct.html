@@ -24,8 +24,8 @@
             <td th:text="${product.productName}"></td>
             <td th:text="${product.productQuantity}"></td>
             <td class="d-flex gap-2">
-                <a th:href="@{/product/update/{productId}(productId=${product.productId})}" class="btn btn-primary">Edit</a>
-                <form th:action="@{/product/delete/{productId}(productId=${product.productId})}" method="post" class="d-inline">
+                <a th:href="@{/product/update/{productId}(productId=${product.id})}" class="btn btn-primary">Edit</a>
+                <form th:action="@{/product/delete/{productId}(productId=${product.id})}" method="post" class="d-inline">
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </td>

@@ -21,7 +21,7 @@
     <h3>Edit Product</h3>
 
     <form
-            th:action="@{/product/update/{productId}(productId=${product.productId})}"
+            th:action="@{/product/update/{productId}(productId=${product.id})}"
             th:object="${product}"
             method="post"
     >
@@ -29,7 +29,7 @@
             <label for="idInput">ID</label>
             <input
                     disabled
-                    th:field="*{productId}"
+                    th:field="*{id}"
                     type="text"
                     class="form-control mb-4 col-4"
                     id="idInput"
