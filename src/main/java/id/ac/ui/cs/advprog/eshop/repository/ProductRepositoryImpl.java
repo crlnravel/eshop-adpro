@@ -44,6 +44,7 @@ public class ProductRepositoryImpl implements ProductRepository {
             if (p.getId().equals(id)) {
                 p.setProductName(product.getProductName());
                 p.setProductQuantity(product.getProductQuantity());
+                return p;
             }
         }
 
