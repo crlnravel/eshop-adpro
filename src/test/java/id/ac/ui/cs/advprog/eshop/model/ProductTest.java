@@ -9,14 +9,14 @@ public class ProductTest {
     @BeforeEach
     void setup() {
         this.product = new Product();
-        this.product.setProductId("980f0dd8-e1ce-494f-b1ba-a7e7238c24f6");
+        this.product.setId("980f0dd8-e1ce-494f-b1ba-a7e7238c24f6");
         this.product.setProductName("Dummy Product");
         this.product.setProductQuantity(100);
     }
 
     @Test
     public void testGetProductId() {
-        assert(this.product.getProductId().equals("980f0dd8-e1ce-494f-b1ba-a7e7238c24f6"));
+        assert(this.product.getId().equals("980f0dd8-e1ce-494f-b1ba-a7e7238c24f6"));
     }
 
     @Test

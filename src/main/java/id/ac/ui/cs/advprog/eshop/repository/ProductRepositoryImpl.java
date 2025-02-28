@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public class ProductRepositoryImpl implements ProductRepository {
-    private List<Product> products = new ArrayList<>();
+    private final List<Product> products = new ArrayList<>();
 
     public Product create(Product product) {
         products.add(product);
@@ -22,7 +22,7 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     public void delete(String id) {
         for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getProductId().equals(id)) {
+            if (products.get(i).getId().equals(id)) {
                 products.remove(i);
                 break;
             }
@@ -31,7 +31,7 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     public Product findById(String id) {
         for (Product product : products) {
-            if (product.getProductId().equals(id)) {
+            if (product.getId().equals(id)) {
                 return product;
             }
         }
@@ -39,11 +39,11 @@ public class ProductRepositoryImpl implements ProductRepository {
         return null;
     }
 
-    public Product update(Product product) {
-        for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getProductId().equals(product.getProductId())) {
-                products.set(i, product);
-                return product;
+    public Product update(String id, Product product) {
+        for (Product p: products) {
+            if (p.getId().equals(id)) {
+                p.setProductName(product.getProductName());
+                p.setProductQuantity(product.getProductQuantity());
             }
         }
 
