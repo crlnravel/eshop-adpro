@@ -15,12 +15,12 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PaymentRepositoryTest {
-    PaymentRepository paymentRepository;
+    PaymentRepositoryImpl paymentRepository;
     List<Payment> payments;
 
     @BeforeEach
     void setUp() {
-        paymentRepository = new PaymentRepository();
+        paymentRepository = new PaymentRepositoryImpl();
 
         List<Product> products = new ArrayList<>();
         Product product = new Product();
