@@ -159,4 +159,54 @@ public class PaymentTest {
         payment.setPaymentData(invalidVoucherData);
         assertEquals("ESHOP12345678ABC", payment.getPaymentData().get("voucherCode"));
     }
+
+    @Test
+    void testBankTransferConstructorWithMissingBankName() {
+        Map<String, String> invalidBankData = new HashMap<>();
+        invalidBankData.put("referenceCode", "REF123456789");
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            new Payment(order, "TRANSFER_BANK", "SUCCESS", invalidBankData);
+        });
+
+        assertEquals("paymentData is not valid", exception.getMessage());
+    }
+
+    @Test
+    void testBankTransferConstructorWithMissingReferenceCode() {
+        Map<String, String> invalidBankData = new HashMap<>();
+        invalidBankData.put("bankName", "BCA");
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            new Payment( order, "TRANSFER_BANK", "SUCCESS", invalidBankData);
+        });
+
+        assertEquals("paymentData is not valid", exception.getMessage());
+    }
+
+    @Test
+    void testBankTransferConstructorWithNullData() {
+        Map<String, String> invalidBankData = new HashMap<>();
+        invalidBankData.put("bankName", null);
+        invalidBankData.put("referenceCode", null);
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            new Payment(order, "TRANSFER_BANK", "SUCCESS", invalidBankData);
+        });
+
+        assertEquals("paymentData is not valid", exception.getMessage());
+    }
+
+    @Test
+    void testBankTransferConstructorWithEmptyData() {
+        Map<String, String> invalidBankData = new HashMap<>();
+        invalidBankData.put("bankName", "");
+        invalidBankData.put("referenceCode", "");
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            new Payment( order, "TRANSFER_BANK", "SUCCESS", invalidBankData);
+        });
+
+        assertEquals("paymentData is not valid", exception.getMessage());
+    }
 }
