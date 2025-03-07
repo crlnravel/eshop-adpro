@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PaymentRepositoryTest {
     PaymentRepositoryImpl paymentRepository;
-    List<Payment> payments;
+    List<Payment> payments = new ArrayList<>();
 
     @BeforeEach
     void setUp() {
@@ -73,6 +73,7 @@ class PaymentRepositoryTest {
 
         Payment newPayment = new Payment(payment.getOrder(),
                 PaymentMethod.TRANSFER_BANK.getValue(), paymentData);
+        newPayment.setId(payment.getId());
         Payment result = paymentRepository.save(newPayment);
 
         Payment findResult = paymentRepository.findById(payments.getFirst().getId());

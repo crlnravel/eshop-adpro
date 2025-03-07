@@ -1,6 +1,5 @@
 package id.ac.ui.cs.advprog.eshop.repository;
 
-import id.ac.ui.cs.advprog.eshop.model.Order;
 import id.ac.ui.cs.advprog.eshop.model.Payment;
 import org.springframework.stereotype.Repository;
 
@@ -9,11 +8,33 @@ import java.util.List;
 
 @Repository
 public class PaymentRepositoryImpl {
-    private List<Payment> paymentsData = new ArrayList<>();
+    private final List<Payment> paymentsData = new ArrayList<>();
 
-    public Payment save(Payment payment) {return null;}
+    public Payment save(Payment payment) {
+        int i = 0;
+        for (Payment savedPayment : paymentsData) {
+            if (savedPayment.getId().equals(payment.getId())) {
+                paymentsData.remove(i);
+                paymentsData.add(i, payment);
+                return payment;
+            }
+            i += 1;
+        }
 
-    public Payment findById(String id) {return null;}
+        paymentsData.add(payment);
+        return payment;
+    }
 
-    public List<Payment> findAll() {return null;}
+    public Payment findById(String id) {
+        for (Payment savedPayment : paymentsData) {
+            if (savedPayment.getId().equals(id)) {
+                return savedPayment;
+            }
+        }
+        return null;
+    }
+
+    public List<Payment> findAll() {
+        return paymentsData;
+    }
 }
