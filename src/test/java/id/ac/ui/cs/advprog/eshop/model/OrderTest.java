@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.util.ArrayList;
 import java.util.List;
 
+import id.ac.ui.cs.advprog.eshop.enums.OrderStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -49,13 +50,13 @@ public class OrderTest {
 
         assertEquals(1708560000L, order.getOrderTime());
         assertEquals("Hehe", order.getAuthor());
-        assertEquals("WAITING_PAYMENT", order.getStatus());
+        assertEquals(OrderStatus.WAITING_PAYMENT.getValue(), order.getStatus());
     }
 
     @Test
     void testCreateOrderSuccessStatus() {
-        Order order = new Order(this.products, 1708560000L, "Hehe", "SUCCESS");
-        assertEquals("SUCCESS", order.getStatus());
+        Order order = new Order(this.products, 1708560000L, "Hehe", OrderStatus.SUCCESS.getValue());
+        assertEquals(OrderStatus.SUCCESS.getValue(), order.getStatus());
     }
 
     @Test
@@ -68,9 +69,8 @@ public class OrderTest {
     @Test
     void testSetStatusToCancelled() {
         Order order = new Order(this.products, 1708560000L, "Hehe");
-        order.setStatus("CANCELLED");
-
-        assertEquals("CANCELLED", order.getStatus());
+        order.setStatus(OrderStatus.CANCELLED.getValue());
+        assertEquals(OrderStatus.CANCELLED.getValue(), order.getStatus());
     }
 
     @Test
