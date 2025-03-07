@@ -9,6 +9,8 @@ import java.util.UUID;
 @Setter
 public abstract class Item {
     private String id;
+    private String name;
+    private int quantity;
 
     Item() {
         this.id = UUID.randomUUID().toString();

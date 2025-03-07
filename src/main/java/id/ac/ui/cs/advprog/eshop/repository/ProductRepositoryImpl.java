@@ -42,8 +42,8 @@ public class ProductRepositoryImpl implements ProductRepository {
     public Product update(String id, Product product) {
         for (Product p: products) {
             if (p.getId().equals(id)) {
-                p.setProductName(product.getProductName());
-                p.setProductQuantity(product.getProductQuantity());
+                p.setName(product.getName());
+                p.setQuantity(product.getQuantity());
                 return p;
             }
         }

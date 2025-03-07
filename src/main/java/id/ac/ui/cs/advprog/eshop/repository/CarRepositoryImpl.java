@@ -38,8 +38,8 @@ public class CarRepositoryImpl implements CarRepository {
         for (Car car : carData) {
             if (car.getId().equals(id)) {
                 car.setId(updatedCar.getId());
-                car.setCarName(updatedCar.getCarName());
-                car.setCarQuantity(updatedCar.getCarQuantity());
+                car.setName(updatedCar.getName());
+                car.setQuantity(updatedCar.getQuantity());
                 return car;
             }
         }

@@ -10,8 +10,8 @@ public class ProductTest {
     void setup() {
         this.product = new Product();
         this.product.setId("980f0dd8-e1ce-494f-b1ba-a7e7238c24f6");
-        this.product.setProductName("Dummy Product");
-        this.product.setProductQuantity(100);
+        this.product.setName("Dummy Product");
+        this.product.setQuantity(100);
     }
 
     @Test
@@ -21,11 +21,11 @@ public class ProductTest {
 
     @Test
     public void testGetProductName() {
-        assert(this.product.getProductName().equals("Dummy Product"));
+        assert(this.product.getName().equals("Dummy Product"));
     }
 
     @Test
     public void testGetProductQuantity() {
-        assert(this.product.getProductQuantity() == 100);
+        assert(this.product.getQuantity() == 100);
     }
 }

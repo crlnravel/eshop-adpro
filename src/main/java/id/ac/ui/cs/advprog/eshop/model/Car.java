@@ -4,7 +4,5 @@ import lombok.Setter;
 
 @Getter @Setter
 public class Car extends Item {
-    private String carName;
     private String carColor;
-    private int carQuantity;
 }

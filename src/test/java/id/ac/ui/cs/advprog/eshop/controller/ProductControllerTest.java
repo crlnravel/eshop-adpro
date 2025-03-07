@@ -70,8 +70,8 @@ public class ProductControllerTest {
     void testProductUpdateGet_Success() throws Exception {
         Product p = new Product();
         p.setId("1");
-        p.setProductName("Dummy Product");
-        p.setProductQuantity(100);
+        p.setName("Dummy Product");
+        p.setQuantity(100);
 
         when(productService.findById("1")).thenReturn(p);
 
@@ -84,8 +84,8 @@ public class ProductControllerTest {
     void testProductUpdatePost() throws Exception {
         Product p = new Product();
         p.setId("1");
-        p.setProductName("Dummy Product");
-        p.setProductQuantity(100);
+        p.setName("Dummy Product");
+        p.setQuantity(100);
 
         when(productService.findById("1")).thenReturn(p);
 

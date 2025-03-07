@@ -32,8 +32,8 @@ public class ProductServiceTest {
     void setUp() {
         // Setup dummy product
         product = new Product();
-        product.setProductName("Dummy Product");
-        product.setProductQuantity(100);
+        product.setName("Dummy Product");
+        product.setQuantity(100);
         product.setId("123");
     }
 
@@ -49,8 +49,8 @@ public class ProductServiceTest {
 
         // Verify that the product returned are all the same
         assertEquals(product.getId(), createdProduct.getId());
-        assertEquals(product.getProductName(), createdProduct.getProductName());
-        assertEquals(product.getProductQuantity(), createdProduct.getProductQuantity());
+        assertEquals(product.getName(), createdProduct.getName());
+        assertEquals(product.getQuantity(), createdProduct.getQuantity());
     }
 
     @Test
@@ -58,8 +58,8 @@ public class ProductServiceTest {
         // same yea
         Product product2 = new Product();
         product2.setId("124");
-        product2.setProductName("Dummy Yeah");
-        product2.setProductQuantity(200);
+        product2.setName("Dummy Yeah");
+        product2.setQuantity(200);
 
         // setup mock behaviour
         when(productRepository.findAll()).thenReturn(Arrays.asList(product, product2).iterator());
@@ -82,8 +82,8 @@ public class ProductServiceTest {
         verify(productRepository).findById(p.getId());
 
         assertEquals(product.getId(), p.getId());
-        assertEquals(product.getProductName(), p.getProductName());
-        assertEquals(product.getProductQuantity(), p.getProductQuantity());
+        assertEquals(product.getName(), p.getName());
+        assertEquals(product.getQuantity(), p.getQuantity());
 
     }
 
@@ -99,8 +99,8 @@ public class ProductServiceTest {
         Product updated = productService.findById(product.getId());
 
         assertEquals(product.getId(), updated.getId());
-        assertEquals(product.getProductName(), updated.getProductName());
-        assertEquals(product.getProductQuantity(), updated.getProductQuantity());
+        assertEquals(product.getName(), updated.getName());
+        assertEquals(product.getQuantity(), updated.getQuantity());
 
     }
 
