@@ -33,7 +33,7 @@ class OrderRepositoryTest {
         Order order2 = new Order(products, 1708570000L, "Safira Sudrajat");
         orders.add(order2);
 
-        Order order3 = new Order(products, 1708570000L, "Safira Sudrajat");
+        Order order3 = new Order(products, 1708570000L, "Bambang Sudrajat");
         orders.add(order3);
     }
 
@@ -57,6 +57,7 @@ class OrderRepositoryTest {
 
         Order newOrder = new Order(order.getProducts(), order.getOrderTime(),
                 order.getAuthor(), OrderStatus.SUCCESS.getValue());
+        newOrder.setId(order.getId());
         Order result = orderRepository.save(newOrder);
 
         Order findResult = orderRepository.findById(orders.get(1).getId());
