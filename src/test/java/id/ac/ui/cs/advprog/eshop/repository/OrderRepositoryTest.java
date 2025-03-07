@@ -12,12 +12,12 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class OrderRepositoryTest {
-    OrderRepository orderRepository;
+    OrderRepositoryImpl orderRepository;
     List<Order> orders;
 
     @BeforeEach
     void setUp() {
-        orderRepository = new OrderRepository();
+        orderRepository = new OrderRepositoryImpl();
 
         List< Product > products = new ArrayList<>();
         Product product1 = new Product();
