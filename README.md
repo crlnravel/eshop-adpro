@@ -187,3 +187,17 @@ Disregarding the OCP can result in tightly coupled classes, making it challengin
 Neglecting the LSP can cause subclasses to behave inconsistently with their base class, reducing code reliability. For example, if subclasses do not adhere to the base class's contract, they may introduce unexpected behavior or errors.
 
 Ignoring SOLID principles leads to **fragile, tightly coupled, and difficult-to-maintain code**. While not always necessary in very small projects, following SOLID is essential for building scalable, testable, and maintainable software systems.
+
+# Reflection 4: Refactoring and TDD
+
+## Reflections on Tutorial
+
+### Reflection on TDD Flow
+> Reflect based on Percival (2017) proposed self-reflective questions (in “Principles and Best Practice of Testing” submodule, chapter “Evaluating Your Testing Objectives”), whether this TDD flow is useful enough for you or not. If not, explain things that you need to do next time you make more tests.
+
+The TDD workflow has been helpful in guiding development, ensuring early bug detection, and maintaining code quality. However, there are areas for improvement, such as refining test coverage, handling more edge cases, and improving the structure of test cases. In future tests, I need to plan better test scenarios and ensure that tests truly drive the design rather than just verifying existing implementations.
+
+### Reflection on F.I.R.S.T. Principle
+> You have created unit tests in Tutorial. Now reflect whether your tests have successfully followed F.I.R.S.T. principle or not. If not, explain things that you need to do the next time you create more tests.
+
+My tests generally follow the F.I.R.S.T. principle, as they are fast, independent, and repeatable. However, there are some aspects that need improvement, such as better isolation of dependencies and ensuring tests remain self-contained. In future tests, I will focus on using proper mocking techniques, improving test organization, and maintaining clear and concise assertions to enhance reliability and maintainability.
