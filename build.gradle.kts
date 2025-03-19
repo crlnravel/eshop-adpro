@@ -26,7 +26,7 @@ repositories {
 
 
 val seleniumJavaVersion = "4.29.0"
-val seleniumJupiterVersion = "5.1.1"
+val seleniumJupiterVersion = "6.0.0"
 val webdrivermanagerVersion = "5.9.3"
 val junitJupiterVersion = "5.12.0"
 
